@@ -4,23 +4,9 @@ import java.util.*;
 
 public class QuickSort {
 	
-	private static Integer[] arr;
 	public static void main(String[] args) {
-		
-		//Take the size of the array and k-th element from user
-		Scanner scan = new Scanner(System.in);
-		System.out.print("Give size of array: ");
-		Integer n = scan.nextInt();
-		/*System.out.print("Enter k: ");
-		Integer k = scan.nextInt();
-		System.out.println(k+" "+n);*/
-		scan.close();
-		
-		generateArray(n);
-		System.out.println("Array is as below:");
-		for(int i=0;i<arr.length;i++) {
-			System.out.print(arr[i] + " ");
-		}
+						
+		Integer[] arr = {147,287,889,277, 873, 119, 815, 550, 424, 668, 137, 814, 933, 661, 557, 180, 168, 733, 89, 121, 250,12, 595, 916, 889, 139, 964, 635, 180, 75,954,26,93,888,1000,1,17,99,150,77,31,44,55,20};
 		
 		quickSort(arr,0,arr.length-1);
 		
@@ -53,7 +39,6 @@ public class QuickSort {
 			if(first<last)
 				swap(arr,first,last);
 		}
-		if(first>last)
 		swap(arr,pivot,last);
 		return last;
 	}
@@ -63,13 +48,5 @@ public class QuickSort {
 		temp = arr[first];
 		arr[first] = arr[last];
 		arr[last] = temp;
-	}
-	
-	public static void generateArray(Integer n) {
-		arr = new Integer[n];
-		for(int i=0;i<n;i++) {
-			Random rand = new Random();
-			arr[i] = rand.nextInt(10000);
-		}
 	}
 }
