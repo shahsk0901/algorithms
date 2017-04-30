@@ -1,8 +1,26 @@
 package daa;
 
+import java.util.*;
+
 public class QuickSort {
+	
+	private static Integer[] arr;
 	public static void main(String[] args) {
-		Integer[] arr = {54,26,93,17,77,31,44,55,20};
+		
+		//Take the size of the array and k-th element from user
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Give size of array: ");
+		Integer n = scan.nextInt();
+		/*System.out.print("Enter k: ");
+		Integer k = scan.nextInt();
+		System.out.println(k+" "+n);*/
+		scan.close();
+		
+		generateArray(n);
+		System.out.println("Array is as below:");
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(arr[i] + " ");
+		}
 		
 		quickSort(arr,0,arr.length-1);
 		
@@ -45,5 +63,13 @@ public class QuickSort {
 		temp = arr[first];
 		arr[first] = arr[last];
 		arr[last] = temp;
+	}
+	
+	public static void generateArray(Integer n) {
+		arr = new Integer[n];
+		for(int i=0;i<n;i++) {
+			Random rand = new Random();
+			arr[i] = rand.nextInt(10000);
+		}
 	}
 }
