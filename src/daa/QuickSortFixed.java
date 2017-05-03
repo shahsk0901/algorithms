@@ -1,31 +1,88 @@
 package daa;
 
+import java.util.*;
+
 public class QuickSortFixed {
-	public static void main(String[] args) {
-	
-		int arr[] = {10,6,20,1,50,7,9,25,4,18,76};
-		//int arr[] = {6,7,9,1,4};
-		splitPivot(arr,0,arr.length-1);
-		for(int i=0;i<arr.length;i++)
-			System.out.print(arr[i] + " ");
-	}
-	
-	public static void splitPivot(int[] sortArray, int first, int last) {
-		int pivot,i,j,temp;
-		pivot = sortArray[first];
-		i = last+1;
-		j = last;
-		
-		while(j >= 0) {
-			if(sortArray[j]>=pivot) {
-				i--;
-				temp = sortArray[j];
-				sortArray[j] = sortArray[i];
-				sortArray[i] = temp;
-			}
-			j--;
-		}
-		pivot = i;
-		//splitPivot(sortArray,0,pivot-1);
-	}
+
+    static Double[] arr;
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+    	System.out.print("Give array size: ");
+    	Integer inputSize = scan.nextInt();
+
+        System.out.print("Give k: ");
+        Integer k = scan.nextInt();
+
+    	scan.close();
+    	System.out.print("\n");
+
+    	generateArray(inputSize);
+
+    	System.out.println("Initial Array:");
+    	for(int i=0;i<arr.length;i++) {
+    	    System.out.print(arr[i] + " ");
+        }
+
+        //Integer[] arr = {147,287,889,277, 873, 119, 815, 550, 424, 668, 137, 814, 933, 661, 557, 180, 168, 733, 89, 121, 250,12, 595, 916, 889, 139, 964, 635, 180, 75,954,26,93,888,1000,1,17,99,150,77,31,44,55,20};
+        //Integer[] arr = {10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9,10,22};
+        //Integer[] arr = {52,26,85,10,97,1};
+        //Integer[] arr = {63, 98, 38,1,80,2};
+
+        quickSort(arr,0,arr.length-1);
+        System.out.println("\nSorted Array:");
+        for(int i=0;i<arr.length;i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void generateArray(Integer inputSize) {
+        Random rnd = new Random();
+        Double rndMax = 10000.00;
+        Double rndMin = 0.00;
+    	arr = new Double[inputSize];
+    	for(int i=0;i<inputSize;i++) {
+    		arr[i] =  rndMin + (rnd.nextDouble() * (rndMax-rndMin));
+    	}
+    }
+
+    public static void quickSort(Double[] arr,Integer start, Integer end) {
+        if(start<end) {
+            Integer pivot = splitArr(arr,start,end);
+
+            quickSort(arr,start,pivot-1);
+            quickSort(arr,pivot+1,end);
+        }
+    }
+
+    public static int splitArr(Double[] arr,Integer start,Integer end) {
+        Integer pivot = start;
+        Integer first = pivot+1;
+        Integer last = end;
+
+        while(first<last) {
+            while(arr[first]<arr[pivot] && first < last) {
+                first++;
+            }
+            while(arr[last]>arr[pivot]) {
+                last--;
+            }
+            if(first<last)
+                swap(arr,first,last);
+        }
+        if(arr[pivot]<arr[last]) {
+            return pivot;
+        } else {
+            swap(arr,pivot,last);
+            return last;
+        }
+    }
+
+    public static void swap(Double[] arr,Integer first,Integer last) {
+        Double temp;
+        temp = arr[first];
+        arr[first] = arr[last];
+        arr[last] = temp;
+    }
 }
