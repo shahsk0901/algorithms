@@ -5,8 +5,9 @@ import java.util.*;
 import java.io.*;
 
 public class QuickSortFixed {
+	
+	private static Double[] arr;
 
-    static Double[] arr;
     public static void main(String[] args) {
     	
     	Scanner scan = new Scanner(System.in);
@@ -16,20 +17,6 @@ public class QuickSortFixed {
         Integer k = scan.nextInt();
     	scan.close();
     	System.out.print("\n");
-    	
-    	arr = new Double[inputSize];
-
-        try {
-        	File file = new File("src/daa/input.txt");
-        	Scanner fileScan = new Scanner(new FileReader(file));
-        	for(int i=0;i<inputSize;i++) {
-        		arr[i] = fileScan.nextDouble();
-        	}
-        } catch(Exception e) {
-        	e.printStackTrace();
-        }
-
-    	//generateArray(inputSize);
 
     	//Integer[] arr = {147,287,889,277, 873, 119, 815, 550, 424, 668, 137, 814, 933, 661, 557, 180, 168, 733, 89, 121, 250,12, 595, 916, 889, 139, 964, 635, 180, 75,954,26,93,888,1000,1,17,99,150,77,31,44,55,20};
         //Double[] arr = {10.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0,0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,22.0};
@@ -37,6 +24,7 @@ public class QuickSortFixed {
         //Integer[] arr = {63, 98, 38,1,80,2};
         //Double[] arr = {1.0,10.0,1.0,1.0,1.0,1.0,1.0,2.0};
     	
+    	generateArray(inputSize);
     	System.out.println("Initial Array:");
     	for(int i=0;i<arr.length;i++) {
     	    System.out.print(arr[i] + " ");
@@ -49,15 +37,15 @@ public class QuickSortFixed {
         }
     }
 
-    /*public static void generateArray(Integer inputSize) {
+    public static void generateArray(Integer inputSize) {
         Random rnd = new Random();
         Double rndMax = 10000.00;
         Double rndMin = 0.00;
     	arr = new Double[inputSize];
     	for(int i=0;i<inputSize;i++) {
-    		arr[i] =  rndMin + (rnd.nextDouble() * (rndMax-rndMin));
+    		arr[i] =  Math.floor(rndMin + (rnd.nextDouble() * (rndMax-rndMin)));
     	}
-    }*/
+    }
 
     public static void quickSort(Double[] arr,Integer start, Integer end) {
         if(start<end) {
