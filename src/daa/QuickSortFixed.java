@@ -38,13 +38,13 @@ public class QuickSortFixed {
             System.out.print(arr[i] + " ");
         }
         
-        System.out.print("\nRunning Time: "+ runningTime);
+        System.out.print("\nRunning Time: "+ runningTime + "ns");
     }
 
     public static void generateArray(Integer inputSize) {
         Random rnd = new Random();
-        Double rndMax = 11.00;
-        Double rndMin = 1.00;
+        Double rndMax = 1001.00;
+        Double rndMin = 0.00;
     	arr = new Double[inputSize];
     	for(int i=0;i<inputSize;i++) {
     		arr[i] =  Math.floor(rndMin + (rnd.nextDouble() * (rndMax-rndMin)));
