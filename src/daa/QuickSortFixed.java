@@ -13,8 +13,8 @@ public class QuickSortFixed {
     	Scanner scan = new Scanner(System.in);
     	System.out.print("Give array size: ");
     	Integer inputSize = scan.nextInt();
-        System.out.print("Give k: ");
-        Integer k = scan.nextInt();
+        /*System.out.print("Give k: ");
+        Integer k = scan.nextInt();*/
     	scan.close();
     	System.out.print("\n");
 
@@ -39,8 +39,8 @@ public class QuickSortFixed {
 
     public static void generateArray(Integer inputSize) {
         Random rnd = new Random();
-        Double rndMax = 10000.00;
-        Double rndMin = 0.00;
+        Double rndMax = 11.00;
+        Double rndMin = 1.00;
     	arr = new Double[inputSize];
     	for(int i=0;i<inputSize;i++) {
     		arr[i] =  Math.floor(rndMin + (rnd.nextDouble() * (rndMax-rndMin)));

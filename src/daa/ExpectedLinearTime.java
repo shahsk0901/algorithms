@@ -2,8 +2,9 @@ package daa;
 
 import java.util.*;
 
-public class QuickSortRandom {
+public class ExpectedLinearTime {
 
+    private static Integer pivot;
 
     public static void main(String[] args) {
 
@@ -11,29 +12,32 @@ public class QuickSortRandom {
         //Double[] arr = {10.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0,0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,22.0};
         //Integer[] arr = {52,26,85,10,97,1};
         //Integer[] arr = {63, 98, 38,1,80,2};
-        Integer[] arr = {1,10,1,1,1,1,1,2,3};
-
+        Integer[] arr = {3,1,4,2,5,7,9,80,12,0,15,27,59,11};
+        /*Random selectK = new Random();
+        Integer k = selectK.nextInt(arr.length);*/
+        Integer k = arr.length;
         System.out.println("Initial Array:");
         for(int i=0;i<arr.length;i++) {
             System.out.print(arr[i] + " ");
         }
 
-        quickSort(arr,0,arr.length-1);
-        System.out.println("\nSorted Array:");
-        for(int i=0;i<arr.length;i++) {
-            System.out.print(arr[i] + " ");
-        }
+        Integer kElement = quickSort(arr,0,arr.length-1,k-1);
+        System.out.println("\n\n"+k+"-smallest: " + kElement);
     }
 
-    public static void quickSort(Integer[] arr,Integer start, Integer end) {
-        if(start<end) {
-            Integer pivot = splitArr(arr,start,end);
-
-            quickSort(arr,start,pivot-1);
-            quickSort(arr,pivot+1,end);
+    public static Integer quickSort(Integer[] arr,Integer start, Integer end,Integer k) {
+        if(start<=end) {
+            pivot = splitArr(arr,start,end);
+            if(k<pivot) {
+                quickSort(arr,start,pivot-1,k);
+            } else if(k>pivot) {
+                quickSort(arr,pivot+1,end,k);
+            }
         }
+        return arr[pivot];
     }
 
+    @SuppressWarnings("Duplicates")
     public static int splitArr(Integer[] arr,Integer start,Integer end) {
         Random selectPivot = new Random();
         Integer pivot = start + (selectPivot.nextInt(end-start+1));
@@ -50,7 +54,7 @@ public class QuickSortRandom {
                 last--;
             }
             if(first<last)
-            swap(arr,first,last);
+                swap(arr,first,last);
         }
         if(arr[pivot]<arr[last]) {
             return pivot;
