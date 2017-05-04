@@ -29,12 +29,16 @@ public class QuickSortFixed {
     	for(int i=0;i<arr.length;i++) {
     	    System.out.print(arr[i] + " ");
     	}
-
+    	long startTime = System.nanoTime();
         quickSort(arr,0,arr.length-1);
+        long endTime = System.nanoTime();
+        long runningTime = endTime - startTime;
         System.out.println("\nSorted Array:");
         for(int i=0;i<arr.length;i++) {
             System.out.print(arr[i] + " ");
         }
+        
+        System.out.print("\nRunning Time: "+ runningTime);
     }
 
     public static void generateArray(Integer inputSize) {
