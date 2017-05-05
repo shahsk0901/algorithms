@@ -2,9 +2,11 @@ package daa;
 
 import java.io.File;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class QuickSort3Hueristic {
-
+	
+	private static Double[] arr;
 
     public static void main(String[] args) {
 
@@ -26,11 +28,16 @@ public class QuickSort3Hueristic {
             System.out.print(arr[i] + " ");
         }
 
+        long startTime = System.nanoTime();
         quickSort(arr,0,arr.length-1);
+        long endTime = System.nanoTime();
+        long runningTime = endTime - startTime;
+        
         System.out.println("\nSorted Array:");
         for(int i=0;i<arr.length;i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.print("\nRunning Time: "+ runningTime + "ns");
     }
 
     public static void quickSort(Double[] arr,Integer start, Integer end) {
@@ -42,8 +49,7 @@ public class QuickSort3Hueristic {
         }
     }
 
-    @SuppressWarnings("Duplicates")
-    public static int splitArr(Integer[] arr,Integer start,Integer end) {
+    public static int splitArr(Double[] arr,Integer start,Integer end) {
         Integer medianOf3[] = new Integer[3];
         Random number = new Random();
         medianOf3[0] = start + (number.nextInt(end-start+1));
@@ -74,8 +80,8 @@ public class QuickSort3Hueristic {
         }
     }
 
-    public static void swap(Integer[] arr,Integer first,Integer last) {
-        Integer temp;
+    public static void swap(Double[] arr,Integer first,Integer last) {
+        Double temp;
         temp = arr[first];
         arr[first] = arr[last];
         arr[last] = temp;

@@ -6,6 +6,7 @@ import java.io.*;
 public class QuickSortFixed {
 	
 	private static Double[] arr;
+	private static Integer depth = 0;
 
     public static void main(String[] args) { 	
     	
@@ -25,22 +26,25 @@ public class QuickSortFixed {
     	for(int i=0;i<arr.length;i++) {
     	    System.out.print(arr[i] + " ");
     	}
+    	
     	long startTime = System.nanoTime();
         quickSort(arr,0,arr.length-1);
         long endTime = System.nanoTime();
         long runningTime = endTime - startTime;
+        
         System.out.println("\nSorted Array:");
         for(int i=0;i<arr.length;i++) {
             System.out.print(arr[i] + " ");
         }
         
-        System.out.print("\nRunning Time: "+ runningTime + "ns");
+        System.out.print("\nRunning Time: "+ runningTime + " ms");
+        System.out.println("\nDepth: "+depth);
     }
 
     public static void quickSort(Double[] arr,Integer start, Integer end) {
-        if(start<end) {
+    	if(start<end) {
             Integer pivot = splitArr(arr,start,end);
-
+            depth++;
             quickSort(arr,start,pivot-1);
             quickSort(arr,pivot+1,end);
         }

@@ -60,7 +60,7 @@ public class GenerateArray {
     
 	public static void uniformArray(Integer inputSize) {
         Random rnd = new Random();
-        Double rndMax = 1001.0;
+        Double rndMax = 10001.0;
         Double rndMin = 0.0;
         try {
         	if(type == 1) {

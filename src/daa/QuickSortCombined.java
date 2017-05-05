@@ -1,18 +1,28 @@
 package daa;
 
+import java.io.File;
 import java.util.*;
 
 public class QuickSortCombined {
 
     private static Integer selectedPivot;
+    private static Double[] arr;
 
     public static void main(String[] args) {
 
-        Integer[] arr = {147,287,889,277, 873, 119, 815, 550, 424, 668, 137, 814, 933, 661, 557, 180, 168, 733, 89, 121, 250,12, 595, 916, 889, 139, 964, 635, 180, 75,954,26,93,888,1000,1,17,99,150,77,31,44,55,20,147};
-        //Double[] arr = {10.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0,0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,22.0};
-        //Integer[] arr = {52,26,85,10,97,1};
-        //Integer[] arr = {63, 98, 38,1,80,2};
-        //Integer[] arr = {1,10,1,1,1,1,1,2,3};
+    	
+    	File file = new File("src/daa/sortingAlgorithmInput.txt");
+    	try {
+    		Scanner scanFile = new Scanner(file);
+    		Integer inputSize = scanFile.nextInt();
+    		arr = new Double[inputSize]; 
+    		for(int i=0;i<inputSize;i++) {
+    			arr[i] = scanFile.nextDouble();
+    		}
+    		scanFile.close();
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	}
 
         Scanner scan = new Scanner(System.in);
         System.out.println("Choose pivot option:\n1) First element as pivot\n2) Random element as pivot\n" +
@@ -33,7 +43,7 @@ public class QuickSortCombined {
         }
     }
 
-    public static void quickSort(Integer[] arr,Integer start, Integer end,Integer option) {
+    public static void quickSort(Double[] arr,Integer start, Integer end,Integer option) {
         if(start<end) {
             Integer pivot = getPivot(arr,start,end,option);
             Integer splitPoint = splitArr(arr,start,end,pivot);
@@ -43,7 +53,7 @@ public class QuickSortCombined {
         }
     }
 
-    public static Integer getPivot(Integer arr[],Integer start,Integer end,Integer option) {
+    public static Integer getPivot(Double arr[],Integer start,Integer end,Integer option) {
         if(option == 1) {
             selectedPivot = start;
         } else if(option == 2) {
@@ -61,8 +71,7 @@ public class QuickSortCombined {
         return selectedPivot;
     }
 
-    @SuppressWarnings("Duplicates")
-    public static int splitArr(Integer[] arr,Integer start,Integer end,Integer pivot) {
+    public static int splitArr(Double[] arr,Integer start,Integer end,Integer pivot) {
 
         swap(arr,start,pivot);
         pivot = start;
@@ -87,8 +96,8 @@ public class QuickSortCombined {
         }
     }
 
-    public static void swap(Integer[] arr,Integer first,Integer last) {
-        Integer temp;
+    public static void swap(Double[] arr,Integer first,Integer last) {
+        Double temp;
         temp = arr[first];
         arr[first] = arr[last];
         arr[last] = temp;
