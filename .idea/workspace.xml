@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c5981c98-1b04-4a0a-808e-555b42fde9aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/daa/input.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/daa/input.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/daa/ExpectedLinearTime.class" afterPath="$PROJECT_DIR$/bin/daa/ExpectedLinearTime.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/daa/GenerateArray.class" afterPath="$PROJECT_DIR$/bin/daa/GenerateArray.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/daa/QuickSort3Hueristic.class" afterPath="$PROJECT_DIR$/bin/daa/QuickSort3Hueristic.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/daa/QuickSortAndInsertionSort.class" afterPath="$PROJECT_DIR$/bin/daa/QuickSortAndInsertionSort.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/daa/QuickSortCombined.class" afterPath="$PROJECT_DIR$/bin/daa/QuickSortCombined.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/daa/QuickSortFixed.class" afterPath="$PROJECT_DIR$/bin/daa/QuickSortFixed.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/daa/QuickSortRandom.class" afterPath="$PROJECT_DIR$/bin/daa/QuickSortRandom.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/daa/orderStatisticsInput.txt" afterPath="$PROJECT_DIR$/bin/daa/orderStatisticsInput.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/daa/sortingAlgorithmInput.txt" afterPath="$PROJECT_DIR$/bin/daa/sortingAlgorithmInput.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/daa/ExpectedLinearTime.java" afterPath="$PROJECT_DIR$/src/daa/ExpectedLinearTime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/daa/GenerateArray.java" afterPath="$PROJECT_DIR$/src/daa/GenerateArray.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/daa/QuickSort3Hueristic.java" afterPath="$PROJECT_DIR$/src/daa/QuickSort3Hueristic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/daa/QuickSortAndInsertionSort.java" afterPath="$PROJECT_DIR$/src/daa/QuickSortAndInsertionSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/daa/QuickSortCombined.java" afterPath="$PROJECT_DIR$/src/daa/QuickSortCombined.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/daa/QuickSortFixed.java" afterPath="$PROJECT_DIR$/src/daa/QuickSortFixed.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/daa/QuickSortRandom.java" afterPath="$PROJECT_DIR$/src/daa/QuickSortRandom.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/daa/orderStatisticsInput.txt" afterPath="$PROJECT_DIR$/src/daa/orderStatisticsInput.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/daa/sortingAlgorithmInput.txt" afterPath="$PROJECT_DIR$/src/daa/sortingAlgorithmInput.txt" />
-    </list>
+    <list default="true" id="c5981c98-1b04-4a0a-808e-555b42fde9aa" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,9 +16,13 @@
       <file leaf-file-name="ExpectedLinearTime.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/daa/ExpectedLinearTime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="40" column="4" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="221">
+              <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+              <folding>
+                <marker date="1494005106672" expanded="true" signature="1556:1882" ph="{...}" />
+                <marker date="1494005106672" expanded="true" signature="1955:2618" ph="{...}" />
+                <marker date="1494005106672" expanded="true" signature="2689:2802" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -630,16 +612,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494001410033</updated>
-      <workItem from="1494001421543" duration="1274000" />
+      <workItem from="1494001421543" duration="1492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1274000" />
+    <option name="totallyTimeSpent" value="1492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -700,9 +681,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/daa/ExpectedLinearTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="40" column="4" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="221">
+          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+          <folding>
+            <marker date="1494005106672" expanded="true" signature="1556:1882" ph="{...}" />
+            <marker date="1494005106672" expanded="true" signature="1955:2618" ph="{...}" />
+            <marker date="1494005106672" expanded="true" signature="2689:2802" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -5,7 +5,7 @@ import java.util.*;
 
 public class QuickSortAndInsertionSort {
 
-    private static Integer l = 100;
+    private static Integer l = 5;
     private static Double[] arr;
 
     public static void main(String[] args) {
@@ -42,29 +42,28 @@ public class QuickSortAndInsertionSort {
     }
 
     private static void sortArray(Double[] arr,Integer start,Integer end) {
-        Integer arraySize = end+1;
+        Integer arraySize = end-start;
         if(arraySize>l) {
             quickSort(arr,start,end);
         } else {
-            insertionSort(arr);
+            insertionSort(arr,start,end);
         }
     }
 
-    private static void insertionSort(Double[] arr) {
-        Double temp;
-    	for(int i=0;i<arr.length;i++)
-        {
-            for(int j=i;j>0;j--)
-            {
-                if(arr[j-1]>arr[j])
-                {
-                    temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
-                }
-            }
-        }
-    }
+    public static void insertionSort(Double[] arr, int start, int end) {
+	    Integer first, last;
+	    Double temp;
+
+	    for (last = start + 1; last <= end; last++) {
+	      temp = arr[last];
+	      first = last;
+	      while (first > start && arr[first - 1] >= temp) {
+	    	  arr[first] = arr[first - 1];
+	        --first;
+	      }
+	      arr[first] = temp;
+	    }
+	  }
 
     public static void quickSort(Double[] arr,Integer start, Integer end) {
         if(start<end) {
