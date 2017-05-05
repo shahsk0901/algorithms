@@ -1,12 +1,15 @@
 package daa;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.Writer;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 public class QuickSort3Hueristic {
 	
 	private static Double[] arr;
+	private static Writer output;
+	private static Integer depth = 0;
 
     public static void main(String[] args) {
 
@@ -22,6 +25,23 @@ public class QuickSort3Hueristic {
     	} catch(Exception e) {
     		e.printStackTrace();
     	}
+    	
+    	Scanner scan = new Scanner(System.in);
+        System.out.print("Enter k: ");
+        Integer k = scan.nextInt();
+        scan.close();
+    	
+        try {
+        	output = new FileWriter("src/daa/output/QuickSort3Hueristic.txt");
+        	output.write("Quicksort using insertion sort\n n = "+ arr.length + " k = "+k+"\n\nArray before Sorting:\n");
+        	for(int i=0;i<arr.length;i++) {
+                output.write(arr[i] + "\n");
+            }
+        	output.close();
+        	
+        } catch(Exception e) {
+        	e.printStackTrace();
+        }
 
         System.out.println("Initial Array:");
         for(int i=0;i<arr.length;i++) {
@@ -37,13 +57,31 @@ public class QuickSort3Hueristic {
         for(int i=0;i<arr.length;i++) {
             System.out.print(arr[i] + " ");
         }
+        
+        try {
+        	output = new FileWriter("src/daa/output/QuickSort3Hueristic.txt",true);
+        	output.write("\nAfter sorting:\n");
+        	for(int i=0;i<arr.length;i++) {
+                output.write(arr[i] + "\n");
+            }
+        	output.write("\n\n"+k+"-smallest: " + arr[k-1]);
+        	output.write("\n\nTop "+k+" elements are:\n");
+            for(int i=arr.length-1;i>arr.length-k-1;i--) {
+                output.write(arr[i]+"\n");
+            }
+            output.close();
+        } catch(Exception e) {
+        	e.printStackTrace();
+        }
+        
         System.out.print("\nRunning Time: "+ runningTime + "ns");
+        System.out.println("\nDepth: "+depth);
     }
 
     public static void quickSort(Double[] arr,Integer start, Integer end) {
         if(start<end) {
             Integer pivot = splitArr(arr,start,end);
-
+            depth++;
             quickSort(arr,start,pivot-1);
             quickSort(arr,pivot+1,end);
         }

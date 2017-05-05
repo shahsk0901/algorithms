@@ -7,6 +7,7 @@ public class QuickSortFixed {
 	
 	private static Double[] arr;
 	private static Integer depth = 0;
+	private static Writer output;
 
     public static void main(String[] args) { 	
     	
@@ -22,6 +23,23 @@ public class QuickSortFixed {
     	} catch(Exception e) {
     		e.printStackTrace();
     	}
+    	
+    	Scanner scan = new Scanner(System.in);
+        System.out.print("Enter k: ");
+        Integer k = scan.nextInt();
+        scan.close();
+    	
+        try {
+        	output = new FileWriter("src/daa/output/QuickSortFixed.txt");
+        	output.write("Quicksort using insertion sort\n n = "+ arr.length + " k = "+k+"\n\nArray before Sorting:\n");
+        	for(int i=0;i<arr.length;i++) {
+                output.write(arr[i] + "\n");
+            }
+        	output.close();
+        	
+        } catch(Exception e) {
+        	e.printStackTrace();
+        }
     	System.out.println("Initial Array:");
     	for(int i=0;i<arr.length;i++) {
     	    System.out.print(arr[i] + " ");
@@ -37,7 +55,23 @@ public class QuickSortFixed {
             System.out.print(arr[i] + " ");
         }
         
-        System.out.print("\nRunning Time: "+ runningTime + " ms");
+        try {
+        	output = new FileWriter("src/daa/output/QuickSortFixed.txt",true);
+        	output.write("\nAfter sorting:\n");
+        	for(int i=0;i<arr.length;i++) {
+                output.write(arr[i] + "\n");
+            }
+        	output.write("\n\n"+k+"-smallest: " + arr[k-1]);
+        	output.write("\n\nTop "+k+" elements are:\n");
+            for(int i=arr.length-1;i>arr.length-k-1;i--) {
+                output.write(arr[i]+"\n");
+            }
+            output.close();
+        } catch(Exception e) {
+        	e.printStackTrace();
+        }
+        
+        System.out.print("\nRunning Time: "+ runningTime + " ns");
         System.out.println("\nDepth: "+depth);
     }
 

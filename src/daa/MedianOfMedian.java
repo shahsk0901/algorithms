@@ -76,9 +76,16 @@ public class MedianOfMedian
         }
         return medians;
     }
+
+    public static Integer getMedian(Double[] arr,Integer start, Integer end,Integer k) {
+        Integer index = ((start+end)/2);
+        Integer median =
+    }
+
     public static Double kthsmallest(Double[] arr,Integer start, Integer end,Integer k) {
         if(start<=end) {
-            pivot = splitArr(arr,start,end);
+            pivot = getMedian(arr,start, end, k);
+            //pivot = splitArr(arr,start,end);
             Integer kth = pivot - start + 1;
             if(k<kth) {
                 kthsmallest(arr,start,pivot-1,k);
