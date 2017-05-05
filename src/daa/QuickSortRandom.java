@@ -1,18 +1,27 @@
 package daa;
 
+import java.io.File;
 import java.util.*;
 
 public class QuickSortRandom {
 
-
+	private static Double[] arr;
+	
     public static void main(String[] args) {
 
-        //Integer[] arr = {147,287,889,277, 873, 119, 815, 550, 424, 668, 137, 814, 933, 661, 557, 180, 168, 733, 89, 121, 250,12, 595, 916, 889, 139, 964, 635, 180, 75,954,26,93,888,1000,1,17,99,150,77,31,44,55,20,147};
-        //Double[] arr = {10.0,9.0,8.0,7.0,6.0,5.0,4.0,3.0,2.0,1.0,0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,22.0};
-        //Integer[] arr = {52,26,85,10,97,1};
-        //Integer[] arr = {63, 98, 38,1,80,2};
-        Integer[] arr = {1,10,1,1,1,1,1,2,3};
-
+    	File file = new File("src/daa/sortingAlgorithmInput.txt");
+    	try {
+    		Scanner scanFile = new Scanner(file);
+    		Integer inputSize = scanFile.nextInt();
+    		arr = new Double[inputSize]; 
+    		for(int i=0;i<inputSize;i++) {
+    			arr[i] = scanFile.nextDouble();
+    		}
+    		scanFile.close();
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    	
         System.out.println("Initial Array:");
         for(int i=0;i<arr.length;i++) {
             System.out.print(arr[i] + " ");
@@ -25,7 +34,7 @@ public class QuickSortRandom {
         }
     }
 
-    public static void quickSort(Integer[] arr,Integer start, Integer end) {
+    public static void quickSort(Double[] arr,Integer start, Integer end) {
         if(start<end) {
             Integer pivot = splitArr(arr,start,end);
 
@@ -34,7 +43,7 @@ public class QuickSortRandom {
         }
     }
 
-    public static int splitArr(Integer[] arr,Integer start,Integer end) {
+    public static int splitArr(Double[] arr,Integer start,Integer end) {
         Random selectPivot = new Random();
         Integer pivot = start + (selectPivot.nextInt(end-start+1));
         swap(arr,start,pivot);
@@ -60,8 +69,8 @@ public class QuickSortRandom {
         }
     }
 
-    public static void swap(Integer[] arr,Integer first,Integer last) {
-        Integer temp;
+    public static void swap(Double[] arr,Integer first,Integer last) {
+        Double temp;
         temp = arr[first];
         arr[first] = arr[last];
         arr[last] = temp;
